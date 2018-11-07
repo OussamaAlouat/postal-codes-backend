@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "NODE_ENV=development ./node_modules/.bin/nodemon -w src --exec \"./node_modules/.bin/babel-node src --presets '@babel/preset-env'\"",
+    "dev_debug": "NODE_ENV=development ./node_modules/.bin/nodemon $NODE_DEBUG_OPTION -w src --exec \"./node_modules/.bin/babel-node src --presets '@babel/preset-env'\"",
+    "prestart": "npm run -s build",
+    "build": "./node_modules/.bin/babel src -s -D -d dist --presets '@babel/preset-env'",
+    "start": "NODE_ENV=production node ./dist/",
+    "test": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/babel-tape-runner ./tests/*.test.js | ./node_modules/.bin/tap-spec",
+    "coverage": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.data"
   },
   "author": "Oussama Alouat",
   "license": "ISC",

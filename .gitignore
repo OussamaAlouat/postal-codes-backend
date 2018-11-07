@@ -1,2 +1,5 @@
 /node_module
 /.idea
+/src/config/production.js
+/src/config/development.js
+/src/config/test.js
