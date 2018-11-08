@@ -1,16 +1,15 @@
-import {postalNameModel} from "../model/postalNameModel";
+import {postalProvinciaNameModel} from "../model/postalProvinciaNameModel";
 import {Mysql} from "../connector/db";
 
 const postalNameController = function (req, res, config) {
     const mysql = Mysql();
     const connection = mysql.connect(config);
-    postalNameModel(req, res, connection, mysql)
+    postalProvinciaNameModel(req, res, connection, mysql)
         .then((response) => {
             response.length === 0 ? res.status(404).json({
                 message: 'Postal code not found',
                 status: 404
             }) : res.json({data: response});
-            res.json(response);
             mysql.disconnect(connection);
 
         })
