@@ -1,4 +1,4 @@
-/node_module
+/node_modules
 /.idea
 /src/config/production.js
 /src/config/development.js
