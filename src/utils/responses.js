@@ -11,7 +11,7 @@ const setLinks = (req, res) => {
     const _links = {
         'getByPostalCode': '/postalcode/:postalCode',
         'getByName': '/cityname/:idName',
-        'getAllCitiesOfAProvidence': '/provincia/:idName'
+        'getAllCitiesOfAProvince': '/provincia/:idName'
     };
 
     return Object.assign({}, {_links, data: res});
