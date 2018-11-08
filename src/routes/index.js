@@ -1,8 +1,6 @@
 import {Router} from 'express';
 import {index} from '../controller';
-import {postalCodeController} from "../controller/postalCodeController";
-import {postalNameController} from "../controller/postalNameController";
-import {postalProvinciaNameController} from "../controller/postalProvinciaNameConroller";
+import {postalCodeController,postalNameController, postalProvinciaNameController} from "../controller/postalCodeController";
 
 
 export default (config) => {

@@ -9,8 +9,9 @@ const codeMessages = {
 const setLinks = (req, res) => {
 
     const _links = {
-        'login': '/login',
-        'logout': '/logout'
+        'getByPostalCode': '/postalcode/:postalCode',
+        'getByName': '/cityname/:idName',
+        'getAllCitiesOfAProvidence': '/provincia/:idName'
     };
 
     return Object.assign({}, {_links, data: res});
