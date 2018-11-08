@@ -8,10 +8,8 @@ const postalCodeController = function (req, res, config) {
         .then((response) => {
             response.length === 0 ? res.status(404).json({message: 'Postal code not found', status: 404}) :
                 res.json({data: response[0]});
-            res.json(response);
             mysql.disconnect(connection);
         }).catch((err) => res.status(500).json({message: 'Server error'}))
-
 
 };
 export {postalCodeController}
