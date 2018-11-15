@@ -6,7 +6,7 @@ const setLinks = (req, res) => {
         'getAllCitiesOfAProvince': '/provincia/:idName'
     };
 
-    return Object.assign({}, res,{_links});
+    return Object.assign({}, {_links},res);
 };
 
 export { setLinks};

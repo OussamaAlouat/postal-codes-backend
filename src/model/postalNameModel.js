@@ -2,9 +2,9 @@ const postalNameModel = function (req, res, conn, mysql) {
     const name = req.params.idName;
     const query = `
     SELECT  DISTINCT
-      postal.poblacion.poblacion as poblacion,
-      postal.codigopostal.codigopostalid as codigopostal,
-      postal.provincia.provincia as provincia,
+      postal.poblacion.poblacion as town,
+      postal.codigopostal.codigopostalid as postalcode,
+      postal.provincia.provincia as province,
       postal.poblacion.lat as latitude,
       postal.poblacion.lon as longitude
     FROM postal.poblacion 
