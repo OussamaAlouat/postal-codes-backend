@@ -1,6 +1,6 @@
 import test from 'tape';
 import request from 'supertest';
-import {app} from '../src/index';
+import {app, server} from '../src/index';
 
 test('-------- Controller: GET /', (assert) => {
     const url = '/';
@@ -16,7 +16,6 @@ test('-------- Controller: GET /', (assert) => {
         }
     };
     const statusCodeExpected = 200;
-
     request(app)
         .get(url)
         .expect(statusCodeExpected)
@@ -24,9 +23,11 @@ test('-------- Controller: GET /', (assert) => {
             (res) => {
                 assert.deepEqual(res.body, responseExpected, message);
                 assert.end();
+                server.close()
             }, (err) => {
                 assert.fail(err.message);
                 assert.end();
+                server.close()
             }
         );
 });

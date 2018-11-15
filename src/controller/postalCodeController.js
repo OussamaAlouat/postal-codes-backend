@@ -24,12 +24,12 @@ const postalNameController = function (req, res, config) {
             response.length === 0 ? res.status(404).json({
                 message: 'Postal code not found',
                 status: 404
-            }) : res.json(setLinks(req , {data: response}));
+            }) : res.json(setLinks(req, {data: response}));
             mysql.disconnect(connection);
 
         })
         .catch((err) => {
-            res.status(500).json({message: 'Server error'})
+            res.status(500).json({message: ` Server error: ${err}`})
         })
 };
 
@@ -46,7 +46,7 @@ const postalProvinciaNameController = function (req, res, config) {
 
         })
         .catch((err) => {
-            res.status(500).json({message: 'Server error'})
+            res.status(500).json({message: ` Server error: ${err}`})
         })
 };
 
