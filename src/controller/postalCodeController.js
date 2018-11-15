@@ -39,7 +39,7 @@ const postalProvinciaNameController = function (req, res, config) {
     postalProvinciaNameModel(req, res, connection, mysql)
         .then((response) => {
             response.length === 0 ? res.status(404).json({
-                message: 'Postal code not found',
+                message: 'Province not found',
                 status: 404
             }) : res.json(setLinks(req, {data: response}));
             mysql.disconnect(connection);
