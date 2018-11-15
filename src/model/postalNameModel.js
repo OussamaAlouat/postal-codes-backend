@@ -1,7 +1,7 @@
 const postalNameModel = function (req, res, conn, mysql) {
     const name = req.params.idName;
     const query = `
-    SELECT 
+    SELECT  DISTINCT
       postal.poblacion.poblacion as poblacion,
       postal.codigopostal.codigopostalid as codigopostal,
       postal.provincia.provincia as provincia,
