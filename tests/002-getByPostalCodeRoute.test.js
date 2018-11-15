@@ -13,17 +13,11 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             getAllCitiesOfAProvince: "/provincia/:idName"
         },
         data: {
-            data: {
-                codigopostalid: 46500,
-                poblacionid: 220,
-                provinciaid: 46,
-                poblacion: "Sagunto/Sagunt",
-                ineid: 46220000000,
-                lat: -0.2759603,
-                lon: 39.68008485,
-                provincia: "Valencia/València"
-            }
-
+                postalcode: 46500,
+                town: "Sagunto/Sagunt",
+                province: "Valencia/València",
+                latitude: -0.2759603,
+                longitude: 39.68008485
         }
 
     };

@@ -12,7 +12,6 @@ test('-------- Controller: GET /provincia/:idName', (assert) => {
             getByName: "/cityname/:idName",
             getAllCitiesOfAProvince: "/provincia/:idName"
         },
-        data: {
             data: [
                 {
                     provinciaid: 46,
@@ -3535,7 +3534,6 @@ test('-------- Controller: GET /provincia/:idName', (assert) => {
                     codigopostalid: 46689
                 }
             ]
-        }
 
     };
 

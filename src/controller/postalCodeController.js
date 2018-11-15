@@ -21,11 +21,11 @@ const postalNameController = function (req, res, config) {
     const connection = mysql.connect(config);
     postalNameModel(req, res, connection, mysql)
         .then((response) => {
-            response.length === 0 ? res.status(404).json({
-                message: 'City not found',
+            mysql.disconnect(connection);
+            response.length === 0 ?
+                res.status(404).json({message: 'City not found',
                 status: 404
             }) : res.json(setLinks(req, {data: response}));
-            mysql.disconnect(connection);
 
         })
         .catch((err) => {

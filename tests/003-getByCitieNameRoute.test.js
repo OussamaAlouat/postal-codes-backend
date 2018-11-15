@@ -12,7 +12,6 @@ test('-------- Controller: GET /cityname/:name', (assert) => {
             getByName: "/cityname/:idName",
             getAllCitiesOfAProvince: "/provincia/:idName"
         },
-        data: {
             data: [
                 {
                     poblacion: "Avinyonet de Puigventós",
@@ -120,7 +119,6 @@ test('-------- Controller: GET /cityname/:name', (assert) => {
                     longitude: 41.61470838
                 }
             ]
-        }
 
     };
 
