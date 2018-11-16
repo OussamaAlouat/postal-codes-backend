@@ -1,7 +1,12 @@
 const postalProvinciaNameModel = function (req, res, conn, mysql) {
     const name = req.params.idName;
     const query = `
-    SELECT * 
+    SELECT 
+      provincia as province,
+      poblacion as town,
+      codigopostalid as postalcode,
+      lat as latitude,
+      lon as longitude
     FROM postal.provincia 
       JOIN postal.poblacion on postal.provincia.provinciaid = postal.poblacion.provinciaid
       JOIN postal.codigopostal on (postal.poblacion.provinciaid = postal.codigopostal.provinciaid 
