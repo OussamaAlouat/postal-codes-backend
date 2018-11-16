@@ -3,9 +3,9 @@ const postalCoordinatesModel = function (req, res, conn, mysql) {
     const longitude = req.params.longitude;
     const query = `
     SELECT DISTINCT
-     postal.poblacion.poblacion AS poblacion,
-     postal.codigopostal.codigopostalid AS codigopostal,
-     postal.provincia.provincia AS provincia
+     postal.poblacion.poblacion AS town,
+     postal.codigopostal.codigopostalid AS postal_code,
+     postal.provincia.provincia AS province
     FROM
         postal.poblacion
          JOIN

@@ -13,7 +13,7 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        data: {
+        city: {
                 postalcode: 46500,
                 town: "Sagunto/Sagunt",
                 province: "Valencia/València",

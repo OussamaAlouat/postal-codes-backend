@@ -1,4 +1,4 @@
-const setLinks = (req, res) => {
+const setLinks = (req, res,next) => {
 
     const _links = {
         'getByPostalCode': '/postalcode/:postalCode',

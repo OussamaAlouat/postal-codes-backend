@@ -13,7 +13,7 @@ test('-------- Controller: GET /cityname/:name', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        data: [
+        cities: [
             {
                 town: "Avinyonet de Puigventós",
                 postalcode: 17742,

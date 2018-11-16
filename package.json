@@ -10,7 +10,8 @@
     "build": "./node_modules/.bin/babel src -s -D -d dist --presets '@babel/preset-env'",
     "start": "NODE_ENV=production node ./dist/",
     "test": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/babel-tape-runner ./tests/*.test.js | ./node_modules/.bin/tap-spec",
-    "coverage": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.data"
+    "coverage": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.data",
+    "sonar_cube": "./sonar-cube-launcher.sh"
   },
   "author": "Oussama Alouat",
   "license": "ISC",
@@ -32,6 +33,7 @@
     "@babel/preset-stage-2": "^7.0.0",
     "babel-tape-runner": "^3.0.0",
     "nodemon": "^1.18.5",
+    "nyc": "^13.1.0",
     "supertest": "^3.3.0",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.1"

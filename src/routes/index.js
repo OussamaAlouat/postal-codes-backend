@@ -5,7 +5,6 @@ import {
     postalProvinciaNameController,
     postalCoordinatesController
 } from "../controller/postalCodeController";
-import {setLinks,setOkResponse} from "../utils/responses";
 
 
 export default (config) => {

@@ -4,7 +4,6 @@ import {postalProvinceNameModel} from '../model/postalProvinciaNameModel'
 import {postalTownNameModel} from "../model/postalTownNameModel";
 import {setLinks} from "../utils/responses";
 import {postalCoordinatesModel} from "../model/postalCoordinatesModel";
-import config from "../config";
 
 const postalCodeController = function (req, res, config) {
     const mysql = Mysql();
@@ -12,7 +11,7 @@ const postalCodeController = function (req, res, config) {
     postalCodeModel(req, res, connection, mysql)
         .then((response) => {
             response.length === 0 ? res.status(404).json({message: 'Postal code not found', status: 404}) :
-                res.json(setLinks(req, {data: response[0]}));
+                res.json(setLinks(req, {city: response[0]}));
             mysql.disconnect(connection);
         }).catch((err) => res.status(500).json({message: 'Server error'}))
 
@@ -28,7 +27,7 @@ const postalNameController = function (req, res, config) {
                 res.status(404).json({
                     message: 'City not found',
                     status: 404
-                }) : res.json(setLinks(req, {data: response}));
+                }) : res.json(setLinks(req, {cities: response}));
 
         })
         .catch((err) => {
@@ -44,7 +43,7 @@ const postalProvinciaNameController = function (req, res, config) {
             response.length === 0 ? res.status(404).json({
                 message: 'Province not found',
                 status: 404
-            }) : res.json(setLinks(req, {data: response}));
+            }) : res.json(setLinks(req, {cities: response}));
             mysql.disconnect(connection);
 
         })
@@ -53,7 +52,7 @@ const postalProvinciaNameController = function (req, res, config) {
         })
 };
 
-const postalCoordinatesController = (req, res, config,next) => {
+const postalCoordinatesController = (req, res, config) => {
     const mysql = Mysql();
     const connection = mysql.connect(config);
     postalCoordinatesModel(req, res, connection, mysql)

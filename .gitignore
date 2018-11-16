@@ -3,3 +3,6 @@
 /src/config/production.js
 /src/config/development.js
 /src/config/test.js
+.nyc_output
+.scannerwork
+coverage.data

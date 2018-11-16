@@ -14,9 +14,9 @@ test('-------- Controller: GET /coordinates/:latitude/:longitude', (assert) => {
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
         city: [{
-            poblacion: "Puçol",
-            codigopostal: 46530,
-            provincia: "Valencia/València"
+            town: "Puçol",
+            postal_code: 46530,
+            province: "Valencia/València"
         }]
 
     };

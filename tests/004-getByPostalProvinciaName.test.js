@@ -13,7 +13,7 @@ test('-------- Controller: GET /province/:idName', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        data: [
+        cities: [
             {
                 province: "Valencia/València",
                 town: "Ademuz",
