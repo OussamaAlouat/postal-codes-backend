@@ -3,7 +3,7 @@ import request from 'supertest';
 import {app, server} from '../src/index';
 
 test('-------- Controller: GET /province/:idName', (assert) => {
-    const url = '/provincia/valen';
+    const url = '/province/valen';
     const message = 'Status must be 200 and response must match with the expected  message';
     const statusCodeExpected = 200;
     const responseExpected = {
@@ -2569,7 +2569,7 @@ test('-------- Controller: GET /province/:idName', (assert) => {
         );
 
     //For not exists cp
-    const urlNotExists = '/provincia/puig';
+    const urlNotExists = '/province/puig';
     const notFoundExpectedCode = 404;
     const expectedResponseForNotExists = {
         message: "Province not found",

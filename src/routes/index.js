@@ -9,6 +9,6 @@ export default (config) => {
     routes.get('/', index);
     routes.get('/postalcode/:postalCode',(req, res) =>  postalCodeController(req, res, config));
     routes.get('/cityname/:idName',(req, res) =>  postalNameController(req, res, config));
-    routes.get('/provincia/:idName',(req, res) =>  postalProvinciaNameController(req, res, config));
+    routes.get('/province/:idName',(req, res) =>  postalProvinciaNameController(req, res, config));
     return routes;
 };

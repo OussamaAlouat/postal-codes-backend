@@ -1,7 +1,7 @@
 import {postalCodeModel} from "../model/postalCodeModel";
 import {Mysql} from "../connector/db";
-import {postalProvinciaNameModel} from '../model/postalProvinciaNameModel'
-import {postalNameModel} from "../model/postalNameModel";
+import {postalProvinceNameModel} from '../model/postalProvinciaNameModel'
+import {postalTownNameModel} from "../model/postalTownNameModel";
 import {setLinks} from "../utils/responses";
 
 const postalCodeController = function (req, res, config) {
@@ -19,7 +19,7 @@ const postalCodeController = function (req, res, config) {
 const postalNameController = function (req, res, config) {
     const mysql = Mysql();
     const connection = mysql.connect(config);
-    postalNameModel(req, res, connection, mysql)
+    postalTownNameModel(req, res, connection, mysql)
         .then((response) => {
             mysql.disconnect(connection);
             response.length === 0 ?
@@ -36,7 +36,7 @@ const postalNameController = function (req, res, config) {
 const postalProvinciaNameController = function (req, res, config) {
     const mysql = Mysql();
     const connection = mysql.connect(config);
-    postalProvinciaNameModel(req, res, connection, mysql)
+    postalProvinceNameModel(req, res, connection, mysql)
         .then((response) => {
             response.length === 0 ? res.status(404).json({
                 message: 'Province not found',

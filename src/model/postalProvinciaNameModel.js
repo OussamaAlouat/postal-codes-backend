@@ -1,4 +1,4 @@
-const postalProvinciaNameModel = function (req, res, conn, mysql) {
+const postalProvinceNameModel = function (req, res, conn, mysql) {
     const name = req.params.idName;
     const query = `
     SELECT 
@@ -15,4 +15,4 @@ const postalProvinciaNameModel = function (req, res, conn, mysql) {
     return mysql.executeQuery(conn, query);
 };
 
-export {postalProvinciaNameModel}
+export {postalProvinceNameModel}
