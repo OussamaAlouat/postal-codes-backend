@@ -9,7 +9,8 @@ test('-------- Controller: GET /', (assert) => {
         _links: {
             getByPostalCode: "/postalcode/:postalCode",
             getByName: "/cityname/:idName",
-            getAllCitiesOfAProvince: "/provincia/:idName"
+            getAllCitiesOfAProvince: "/province/:idName",
+            getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
         data: {
             message: "Server up!!"

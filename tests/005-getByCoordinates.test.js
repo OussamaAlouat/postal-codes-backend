@@ -2,8 +2,8 @@ import test from 'tape';
 import request from 'supertest';
 import {app, server} from '../src/index';
 
-test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
-    const url = '/postalcode/46500';
+test('-------- Controller: GET /coordinates/:latitude/:longitude', (assert) => {
+    const url = '/coordinates/-0.30317868/39.61631894';
     const message = 'Status must be 200 and response must match with the expected simple message';
     const statusCodeExpected = 200;
     const responseExpected = {
@@ -13,13 +13,11 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        data: {
-                postalcode: 46500,
-                town: "Sagunto/Sagunt",
-                province: "Valencia/València",
-                latitude: -0.2759603,
-                longitude: 39.68008485
-        }
+        city: [{
+            poblacion: "Puçol",
+            codigopostal: 46530,
+            provincia: "Valencia/València"
+        }]
 
     };
 

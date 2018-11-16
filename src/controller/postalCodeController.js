@@ -3,6 +3,8 @@ import {Mysql} from "../connector/db";
 import {postalProvinceNameModel} from '../model/postalProvinciaNameModel'
 import {postalTownNameModel} from "../model/postalTownNameModel";
 import {setLinks} from "../utils/responses";
+import {postalCoordinatesModel} from "../model/postalCoordinatesModel";
+import config from "../config";
 
 const postalCodeController = function (req, res, config) {
     const mysql = Mysql();
@@ -23,9 +25,10 @@ const postalNameController = function (req, res, config) {
         .then((response) => {
             mysql.disconnect(connection);
             response.length === 0 ?
-                res.status(404).json({message: 'City not found',
-                status: 404
-            }) : res.json(setLinks(req, {data: response}));
+                res.status(404).json({
+                    message: 'City not found',
+                    status: 404
+                }) : res.json(setLinks(req, {data: response}));
 
         })
         .catch((err) => {
@@ -50,4 +53,18 @@ const postalProvinciaNameController = function (req, res, config) {
         })
 };
 
-export {postalCodeController, postalNameController, postalProvinciaNameController}
+const postalCoordinatesController = (req, res, config,next) => {
+    const mysql = Mysql();
+    const connection = mysql.connect(config);
+    postalCoordinatesModel(req, res, connection, mysql)
+        .then((response) => {
+            response.length === 0 ? res.status(404).json({message: 'Coordinates not found not found', status: 404}) :
+                res.json(setLinks(req, {city: response}));
+            mysql.disconnect(connection);
+        })
+        .catch((err) => {
+            res.status(500).json({message: ` Server error: ${err}`})
+        })
+};
+
+export {postalCodeController, postalNameController, postalProvinciaNameController, postalCoordinatesController}
