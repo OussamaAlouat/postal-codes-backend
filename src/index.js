@@ -10,13 +10,6 @@ const app = express();
 // CONFIG ------------------------------------------------------------------------
 
 const config = configuration(app);
-
-/*
-if ('test' === process.env.NODE_ENV || 'test_local' === process.env.NODE_ENV) {
-    db.disconnect();
-}
-db.connect(config);
-*/
 // MIDDLEWARE -------------------------------------------------------------------
 
 app.use(bodyParser.json({

@@ -10,10 +10,4 @@ const setLinks = (req, res,next) => {
     return Object.assign({}, {_links}, res);
 };
 
-
-const setOkResponse = (req, res, result) => {
-    console.log('req: ', req, 'res: ', res, 'result: ', result)
-     res.status(200).json(result);
-};
-
-export {setLinks, setOkResponse};
+export {setLinks};
