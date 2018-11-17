@@ -4,7 +4,7 @@ const postalProvinceNameModel = function (req, res, conn, mysql) {
     SELECT 
       provincia as province,
       poblacion as town,
-      codigopostalid as postalcode,
+      codigopostalid as postal_code,
       lat as latitude,
       lon as longitude
     FROM postal.provincia 

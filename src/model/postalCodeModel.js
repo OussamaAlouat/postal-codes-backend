@@ -2,7 +2,7 @@ const postalCodeModel = function (req, res, conn, mysql) {
     const postalCode = req.params.postalCode;
     const query = `
         SELECT 
-          codigopostalid as postalcode,
+          codigopostalid as postal_code,
           poblacion as town,
           provincia as province,
           lat as latitude,

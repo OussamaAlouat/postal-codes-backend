@@ -3,7 +3,7 @@ const postalTownNameModel = function (req, res, conn, mysql) {
     const query = `
     SELECT  DISTINCT
       postal.poblacion.poblacion as town,
-      postal.codigopostal.codigopostalid as postalcode,
+      postal.codigopostal.codigopostalid as postal_code,
       postal.provincia.provincia as province,
       postal.poblacion.lat as latitude,
       postal.poblacion.lon as longitude

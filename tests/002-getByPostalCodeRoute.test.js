@@ -14,7 +14,7 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
         city: {
-                postalcode: 46500,
+                postal_code: 46500,
                 town: "Sagunto/Sagunt",
                 province: "Valencia/València",
                 latitude: -0.2759603,

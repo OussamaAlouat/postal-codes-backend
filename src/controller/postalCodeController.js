@@ -27,7 +27,7 @@ const postalNameController = function (req, res, config) {
                 res.status(404).json({
                     message: 'City not found',
                     status: 404
-                }) : res.json(setLinks(req, {cities: response}));
+                }) : res.send(setLinks(req, {cities: response}));
 
         })
         .catch((err) => {
