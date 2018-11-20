@@ -38,7 +38,7 @@ test('-------- Controller: GET /coordinates/:latitude/:longitude', (assert) => {
     const urlNotExists = '/postalcode/00005';
     const notFoundExpectedCode = 404;
     const expectedResponseForNotExists = {
-        message: "Postal code not found",
+        message: "Not found",
         status: 404
     };
     const messageForExpectedNotExists = 'Status should be 404 and message "Postal code not found", for not exists postal code';

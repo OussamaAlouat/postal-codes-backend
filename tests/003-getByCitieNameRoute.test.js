@@ -143,7 +143,7 @@ test('-------- Controller: GET /cityname/:name', (assert) => {
     const urlNotExists = '/cityname/xzu';
     const notFoundExpectedCode = 404;
     const expectedResponseForNotExists = {
-        message: "City not found",
+        message: "Not found",
         status: 404
     };
     const messageForExpectedNotExists = 'Status should be 404 and message "Postal code not found", for not exists postal code';

@@ -13,13 +13,15 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        city: {
+        city: [
+            {
                 postal_code: 46500,
                 town: "Sagunto/Sagunt",
                 province: "Valencia/València",
                 latitude: -0.2759603,
                 longitude: 39.68008485
-        }
+            }
+        ]
 
     };
 
@@ -30,17 +32,17 @@ test('-------- Controller: GET /postalcode/:postalCode', (assert) => {
             (res) => {
                 assert.deepEqual(res.body, responseExpected, message);
                 server.close()
-
             }, (err) => {
                 assert.fail(err.message);
                 server.close()
             }
         );
+
     //For not exists cp
     const urlNotExists = '/postalcode/00005';
     const notFoundExpectedCode = 404;
     const expectedResponseForNotExists = {
-        message: "Postal code not found",
+        message: "Not found",
         status: 404
     };
     const messageForExpectedNotExists = 'Status should be 404 and message "Postal code not found", for not exists postal code';

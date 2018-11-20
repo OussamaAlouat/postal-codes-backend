@@ -1,4 +1,4 @@
-const setLinks = (req, res,next) => {
+const setLinks = (result, req, res, next) => {
 
     const _links = {
         'getByPostalCode': '/postalcode/:postalCode',
@@ -7,7 +7,18 @@ const setLinks = (req, res,next) => {
         'getCityByCoordinates': '/coordinates/:latitude/:longitude'
     };
 
-    return Object.assign({}, {_links}, res);
+    const resultObject = Object.assign({}, {_links}, result);
+    next(resultObject);
 };
 
-export {setLinks};
+const sendOkResponse = (result, req, res) => {
+    res.status(200).json(result);
+};
+
+const filterNotFound = (result, req, res, next) => {
+    if (!result.length > 0 )
+        return res.status(404).json({message: 'Not found', status: 404})
+    next(result);
+
+};
+export {setLinks, sendOkResponse, filterNotFound};
