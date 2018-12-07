@@ -1,4 +1,4 @@
-const processDataUsingPostalCode = (result, req, res, next) => {
+const processDataUsingPostalCode = (result) => {
 
     const postalCodes = result.reduce((acc, val) => {
         return acc.concat({latitude: val.latitude, longitude: val.longitude, postalCode: val.postal_code});
@@ -15,7 +15,7 @@ const processDataUsingPostalCode = (result, req, res, next) => {
     }, []);
 
 
-    next(processData)
+    return processData;
 };
 
 const isInTheArray = (city, cityArrays) => {

@@ -4,6 +4,7 @@ import {postalProvinceNameModel} from '../model/postalProvinceNameModel'
 import {postalTownNameModel} from "../model/postalTownNameModel";
 import {setLinks} from "../utils/responses";
 import {postalCoordinatesModel} from "../model/postalCoordinatesModel";
+import {processDataUsingPostalCode} from "../utils/processData";
 
 const postalCodeController = function (req, res, next, config) {
     const mysql = Mysql();
@@ -22,7 +23,8 @@ const postalNameController = function (req, res, next, config) {
     postalTownNameModel(req, res, connection, mysql)
         .then((response) => {
             mysql.disconnect(connection);
-            next(response)
+            const processed = processDataUsingPostalCode(response);
+            next(processed);
         })
         .catch((err) => {
             res.status(500).json({message: ` Server error: ${err}`})
@@ -35,7 +37,8 @@ const postalProvinceNameController = function (req, res, next, config) {
     postalProvinceNameModel(req, res, connection, mysql)
         .then((response) => {
             mysql.disconnect(connection);
-            next(response);
+            const processed = processDataUsingPostalCode(response);
+            next(processed);
 
         })
         .catch((err) => {
