@@ -6,7 +6,6 @@ import {
 } from "../controller/postalCodeController";
 import {filterNotFound, sendOkResponse, setLinks} from "../utils/responses";
 import {setCitiesAtCitiesObject, setCityAtCityObject} from "../utils/setersAtObjects";
-import {processDataUsingPostalCode} from "../utils/processData";
 
 
 export default (config) => {
