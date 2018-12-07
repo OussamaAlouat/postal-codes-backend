@@ -13,114 +13,119 @@ test('-------- Controller: GET /cityname/:name', (assert) => {
             getAllCitiesOfAProvince: "/province/:idName",
             getCityByCoordinates: "/coordinates/:latitude/:longitude"
         },
-        cities: [
+        "cities": [
             {
                 town: "Avinyonet de Puigventós",
-                postal_code: 17742,
                 province: "Girona",
                 latitude: 2.91439402,
-                longitude: 42.24964566
+                longitude: 42.24964566,
+                postalCodes: [
+                    17742
+                ]
             },
             {
                 town: "Puigpunyent",
-                postal_code: "07194",
                 province: "Illes Balears",
                 latitude: 2.5266031,
-                longitude: 39.62087168
-            },
-            {
-                town: "Puigpunyent",
-                postal_code: "07195",
-                province: "Illes Balears",
-                latitude: 2.5266031,
-                longitude: 39.62087168
+                longitude: 39.62087168,
+                postalCodes: [
+                    "07194",
+                    "07195"
+                ]
             },
             {
                 town: "Bellpuig",
-                postal_code: 25250,
                 province: "Lleida",
                 latitude: 1.01228445,
-                longitude: 41.62522812
+                longitude: 41.62522812,
+                postalCodes: [
+                    25250
+                ]
             },
             {
                 town: "Puigpelat",
-                postal_code: 43812,
                 province: "Tarragona",
                 latitude: 1.29666609,
-                longitude: 41.27974628
+                longitude: 41.27974628,
+                postalCodes: [
+                    43812
+                ]
             },
             {
                 town: "Puigcerdà",
-                postal_code: 17520,
                 province: "Girona",
                 latitude: 1.92634012,
-                longitude: 42.43264078
-            },
-            {
-                town: "Puigcerdà",
-                postal_code: 17529,
-                province: "Girona",
-                latitude: 1.92634012,
-                longitude: 42.43264078
+                longitude: 42.43264078,
+                postalCodes: [
+                    17520,
+                    17529
+                ]
             },
             {
                 town: "Puigdàlber",
-                postal_code: "08797",
                 province: "Barcelona",
                 latitude: 1.70048194,
-                longitude: 41.40553891
+                longitude: 41.40553891,
+                postalCodes: [
+                    "08797"
+                ]
             },
             {
                 town: "Puig-reig",
-                postal_code: "08692",
                 province: "Barcelona",
                 latitude: 1.88151932,
-                longitude: 41.97086915
+                longitude: 41.97086915,
+                postalCodes: [
+                    "08692"
+                ]
             },
             {
                 town: "Puiggròs",
-                postal_code: 25420,
                 province: "Lleida",
                 latitude: 0.89000551,
-                longitude: 41.55039239
+                longitude: 41.55039239,
+                postalCodes: [
+                    25420
+                ]
             },
             {
                 town: "Puigverd d'Agramunt",
-                postal_code: 25318,
                 province: "Lleida",
                 latitude: 1.12196171,
-                longitude: 41.77726506
+                longitude: 41.77726506,
+                postalCodes: [
+                    25318
+                ]
             },
             {
                 town: "Puigverd de Lleida",
-                postal_code: 25153,
                 province: "Lleida",
                 latitude: 0.73288469,
-                longitude: 41.54314115
+                longitude: 41.54314115,
+                postalCodes: [
+                    25153
+                ]
             },
             {
                 town: "el Puig de Santa Maria",
-                postal_code: 46450,
                 province: "Valencia/València",
                 latitude: -0.3033912,
-                longitude: 39.58982953
-            },
-            {
-                town: "el Puig de Santa Maria",
-                postal_code: 46540,
-                province: "Valencia/València",
-                latitude: -0.3033912,
-                longitude: 39.58982953
+                longitude: 39.58982953,
+                postalCodes: [
+                    46450,
+                    46540
+                ]
             },
             {
                 town: "Vilanova de Bellpuig",
-                postal_code: 25264,
                 province: "Lleida",
                 latitude: 0.96086785,
-                longitude: 41.61470838
+                longitude: 41.61470838,
+                postalCodes: [
+                    25264
+                ]
             }
         ]
-
     };
 
     request(app)
