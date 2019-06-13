@@ -13,7 +13,7 @@ const postalCodeController = function (req, res, next, config) {
         .then((response) => {
             mysql.disconnect(connection);
             next(response)
-        }).catch((err) => res.status(500).json({message: 'Server error'}))
+        }).catch((err) => res.status(err.statusCode).json({message: err.message}))
 
 };
 
@@ -25,11 +25,8 @@ const postalNameController = function (req, res, next, config) {
             mysql.disconnect(connection);
             const processed = processDataUsingPostalCode(response);
             next(processed);
-        })
-        .catch((err) => {
-            res.status(500).json({message: ` Server error: ${err}`})
-        })
-};
+        }).catch((err) => res.status(err.statusCode).json({message: err.message}))
+    };
 
 const postalProvinceNameController = function (req, res, next, config) {
     const mysql = Mysql();
@@ -40,10 +37,7 @@ const postalProvinceNameController = function (req, res, next, config) {
             const processed = processDataUsingPostalCode(response);
             next(processed);
 
-        })
-        .catch((err) => {
-            res.status(500).json({message: ` Server error: ${err}`})
-        })
+        }).catch((err) => res.status(err.statusCode).json({message: err.message}))
 };
 
 const postalCoordinatesController = (req, res, next ,config) => {
@@ -53,10 +47,7 @@ const postalCoordinatesController = (req, res, next ,config) => {
         .then((response) => {
             next(response);
             mysql.disconnect(connection);
-        })
-        .catch((err) => {
-            res.status(500).json({message: ` Server error: ${err}`})
-        })
+        }).catch((err) => res.status(err.statusCode).json({message: err.message}))
 };
 
 export {postalCodeController, postalNameController, postalProvinceNameController, postalCoordinatesController}
