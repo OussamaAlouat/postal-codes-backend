@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "fff9e330-4457-4874-9359-43c2ebddad92",
+		"name": "PETITIONS",
+		"description": "Peticiones creadas para realizar pruebas rápidas desde postman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY POSTAL CODE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:3000/postalcode/:postalCode",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"postalcode",
+						":postalCode"
+					],
+					"variable": [
+						{
+							"key": "postalCode",
+							"value": "46530"
+						}
+					]
+				},
+				"description": "Obtener las ciudades/pueblos empleando el código postal"
+			},
+			"response": []
+		},
+		{
+			"name": "GET CITY BY NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:3000/cityname/:idName",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cityname",
+						":idName"
+					],
+					"variable": [
+						{
+							"key": "idName",
+							"value": "Puç"
+						}
+					]
+				},
+				"description": "Obtener las ciudades/pueblos mediante el nombre del pueblo/ciudad"
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL TOWNS BY PROVIDENCE NAME",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:3000/province/:idName",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"province",
+						":idName"
+					],
+					"variable": [
+						{
+							"key": "idName",
+							"value": "Valencia"
+						}
+					]
+				},
+				"description": "Obtener todos los pueblos de una provincia mediante el nombre de la provincia."
+			},
+			"response": []
+		},
+		{
+			"name": "GET CITY BY COORDINATES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://localhost:3000/coordinates/:latitude/:longitude",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coordinates",
+						":latitude",
+						":longitude"
+					],
+					"variable": [
+						{
+							"key": "latitude",
+							"value": "-0.303178680"
+						},
+						{
+							"key": "longitude",
+							"value": "39.616318940"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
