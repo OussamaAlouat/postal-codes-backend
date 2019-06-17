@@ -2,7 +2,6 @@ import {postalCodeModel} from "../model/postalCodeModel";
 import {Mysql} from "../connector/db";
 import {postalProvinceNameModel} from '../model/postalProvinceNameModel'
 import {postalTownNameModel} from "../model/postalTownNameModel";
-import {setLinks} from "../utils/responses";
 import {postalCoordinatesModel} from "../model/postalCoordinatesModel";
 import {processDataUsingPostalCode} from "../utils/processData";
 import {handleError} from '../utils/handleError'
