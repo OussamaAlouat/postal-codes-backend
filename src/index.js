@@ -4,8 +4,11 @@ import bodyParser from 'body-parser';
 import fs from 'fs';
 import configuration from './config'
 import routes from './routes'
-
+import log from 'log4js';
 const app = express();
+
+const logger = log.getLogger('SERVER');
+logger.level = 'debug';
 
 // CONFIG ------------------------------------------------------------------------
 
@@ -44,8 +47,8 @@ const httpsOptions = {
 
  const server = https.createServer(httpsOptions, app).listen(process.env.PORT || config.port, () => {
     const listeningPort = process.env.PORT || config.port;
-    console.log('Server listening on port ' + listeningPort);
+    const message = 'Server listening on port ' + listeningPort;
+    logger.info(message);
 });
-
 
 export {app , server};
