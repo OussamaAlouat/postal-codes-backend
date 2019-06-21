@@ -1,3 +1,7 @@
+import log from "log4js";
+const logger = log.getLogger('RESPONSE');
+logger.level = 'debug';
+
 const setLinks = (result, req, res, next) => {
 
     const _links = {
@@ -12,6 +16,8 @@ const setLinks = (result, req, res, next) => {
 };
 
 const sendOkResponse = (result, req, res) => {
+    const message = `${req.method} ${req.url} ${200}`;
+    logger.info(message);
     res.status(200).json(result);
 };
 
