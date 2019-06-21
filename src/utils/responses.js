@@ -21,9 +21,12 @@ const sendOkResponse = (result, req, res) => {
 };
 
 const filterNotFound = (result, req, res, next) => {
-    if (!result.length > 0 )
+    if (!result.length > 0 ){
+        const message = `${req.method} ${req.url} ${404}`;
+        logger.error(message);
         return res.status(404).json({message: 'Not found', status: 404})
-    next(result);
+    }
 
+    next(result);
 };
 export {setLinks, sendOkResponse, filterNotFound};
