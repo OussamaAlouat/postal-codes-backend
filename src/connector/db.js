@@ -1,7 +1,6 @@
 import mysql from'mysql'
 
 const Mysql = function () {
-
     const connect = function (config) {
         return mysql.createConnection(Object.assign({}, config.db, {multipleStatements: true}));
     };

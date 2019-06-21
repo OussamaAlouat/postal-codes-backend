@@ -11,9 +11,9 @@ const processDataUsingPostalCode = (result) => {
             const codesWithoutLatitudeAndLongitude = getPostalsWithoutLatitudeAndLongitude(codes);
             return acc.concat(Object.assign({}, rest, {postalCodes: codesWithoutLatitudeAndLongitude}))
         }
+
         return acc
     }, []);
-
 
     return processData;
 };

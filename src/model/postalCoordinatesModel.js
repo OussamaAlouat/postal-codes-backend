@@ -15,7 +15,6 @@ const postalCoordinatesModel = function (req, res, conn, mysql) {
          postal.provincia ON postal.poblacion.provinciaid = postal.provincia.provinciaid
     WHERE
       postal.poblacion.lat = '${latitude}' AND postal.poblacion.lon = '${longitude}';`;
-
     return mysql.executeQuery(conn, query);
 };
 
