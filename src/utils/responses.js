@@ -1,5 +1,8 @@
-const setLinks = (result, req, res, next) => {
+import log from "log4js";
+const logger = log.getLogger('RESPONSE');
+logger.level = 'debug';
 
+const setLinks = (result, req, res, next) => {
     const _links = {
         'getByPostalCode': '/postalcode/:postalCode',
         'getByName': '/cityname/:idName',
@@ -12,13 +15,18 @@ const setLinks = (result, req, res, next) => {
 };
 
 const sendOkResponse = (result, req, res) => {
+    const message = `${req.method} ${req.url} ${200}`;
+    logger.info(message);
     res.status(200).json(result);
 };
 
 const filterNotFound = (result, req, res, next) => {
-    if (!result.length > 0 )
+    if (!result.length > 0 ){
+        const message = `${req.method} ${req.url} ${404}`;
+        logger.error(message);
         return res.status(404).json({message: 'Not found', status: 404})
-    next(result);
+    }
 
+    next(result);
 };
 export {setLinks, sendOkResponse, filterNotFound};

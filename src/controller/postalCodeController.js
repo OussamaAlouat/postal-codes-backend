@@ -13,8 +13,7 @@ const postalCodeController = function (req, res, next, config) {
         .then((response) => {
             mysql.disconnect(connection);
             next(response)
-        }).catch(handleError(req, res))
-
+        }).catch(handleError(req, res));
 };
 
 const postalNameController = function (req, res, next, config) {
@@ -25,8 +24,8 @@ const postalNameController = function (req, res, next, config) {
             mysql.disconnect(connection);
             const processed = processDataUsingPostalCode(response);
             next(processed);
-        }).catch(handleError(req,res))
-    };
+        }).catch(handleError(req,res));
+};
 
 const postalProvinceNameController = function (req, res, next, config) {
     const mysql = Mysql();
@@ -36,8 +35,7 @@ const postalProvinceNameController = function (req, res, next, config) {
             mysql.disconnect(connection);
             const processed = processDataUsingPostalCode(response);
             next(processed);
-
-        }).catch(handleError(req, res))
+        }).catch(handleError(req, res));
 };
 
 const postalCoordinatesController = (req, res, next ,config) => {
@@ -47,7 +45,7 @@ const postalCoordinatesController = (req, res, next ,config) => {
         .then((response) => {
             next(response);
             mysql.disconnect(connection);
-        }).catch(handleError(req, res))
+        }).catch(handleError(req, res));
 };
 
 export {postalCodeController, postalNameController, postalProvinceNameController, postalCoordinatesController}
