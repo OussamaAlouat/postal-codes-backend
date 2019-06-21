@@ -16,7 +16,6 @@ export default (config) => {
         (req, res, next) => index(req, res,next),
         (result, req, res, next) => setLinks(result, req, res, next),
         (result, req, res, next) => sendOkResponse(result, req, res)
-
     );
 
     routes.get('/postalcode/:postalCode',
