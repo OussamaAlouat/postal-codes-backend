@@ -1,16 +1,17 @@
 import {Router} from 'express';
 import {index} from '../controller';
 import {
-    postalCodeController, postalNameController,
-    postalCoordinatesController, postalProvinceNameController
-} from "../controller/postalCodeController";
+    postalCodeController,
+    postalNameController,
+    postalCoordinatesController,
+    postalProvinceNameController
+    }from "../controller/postalCodeController";
+
 import {filterNotFound, sendOkResponse, setLinks} from "../utils/responses";
 import {setCitiesAtCitiesObject, setCityAtCityObject} from "../utils/setersAtObjects";
 
-
 export default (config) => {
     const routes = Router();
-
     routes.get('/',
         (req, res, next) => index(req, res,next),
         (result, req, res, next) => setLinks(result, req, res, next),
@@ -49,8 +50,7 @@ export default (config) => {
         (result, req, res, next) => setCityAtCityObject(result, req, res, next),
         (result, req, res, next) => setLinks(result, req, res, next),
         (result, req, res, next) => sendOkResponse(result, req, res)
-    )
-    ;
+    );
 
     return routes;
 };
