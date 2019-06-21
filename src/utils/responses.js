@@ -3,7 +3,6 @@ const logger = log.getLogger('RESPONSE');
 logger.level = 'debug';
 
 const setLinks = (result, req, res, next) => {
-
     const _links = {
         'getByPostalCode': '/postalcode/:postalCode',
         'getByName': '/cityname/:idName',
