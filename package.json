@@ -12,7 +12,8 @@
     "test": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/babel-tape-runner ./tests/*.test.js | ./node_modules/.bin/tap-spec",
     "coverage": "export BABEL_ENV=test && export NODE_ENV=test && ./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov > coverage.data",
     "sonar_cube": "./sonar-cube-launcher.sh",
-    "apidoc": "apidoc -i routes/index -o apidoc/"
+    "apidoc": "apidoc -i src/routes -o apidoc/",
+    "show-api-doc": "http-server apidoc"
   },
   "author": "Oussama Alouat",
   "license": "ISC",
@@ -20,26 +21,33 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "https": "^1.0.0",
-    "log4js": "^4.3.2",
+    "log4js": "^4.5.1",
     "mysql": "^2.17.1",
-    "sqlite3": "^4.0.9"
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/node": "^7.4.5",
-    "@babel/plugin-proposal-decorators": "^7.4.4",
-    "@babel/plugin-proposal-export-namespace-from": "^7.2.0",
-    "@babel/plugin-proposal-function-sent": "^7.2.0",
+    "@babel/cli": "^7.7.0",
+    "@babel/node": "^7.7.0",
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
+    "@babel/plugin-proposal-function-sent": "^7.7.0",
     "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/plugin-proposal-throw-expressions": "^7.2.0",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-env": "^7.7.1",
     "@babel/preset-stage-2": "^7.0.0",
     "apidoc": "^0.17.7",
     "babel-tape-runner": "^3.0.0",
-    "nodemon": "^1.19.1",
+    "http-server": "^0.11.1",
+    "nodemon": "^1.19.4",
     "nyc": "^14.1.1",
     "supertest": "^3.4.2",
     "tap-spec": "^5.0.0",
-    "tape": "^4.10.2"
+    "tape": "^4.11.0"
+  },
+  "apidoc": {
+    "name": "POSTAL_BACKEND",
+    "description": "definition",
+    "title": "POSTAL_BACKEND API ",
+    "url": "https://localhost:8080"
   }
 }

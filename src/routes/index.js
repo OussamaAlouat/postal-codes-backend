@@ -12,6 +12,23 @@ import { setCitiesAtCitiesObject, setCityAtCityObject } from '../utils/setersAtO
 
 export default (config) => {
   const routes = Router();
+  /**
+   * @api {get} /
+   * @apiSuccessExample Success-Resopnse:
+   * HTTP/1.1 200 OK
+   * {
+     data : {
+       message: 'Server up!!'
+     },
+    _links: {
+      'getByPostalCode': '/postalcode/:postalCode',
+      'getByName': '/cityname/:idName',
+      'getAllCitiesOfAProvince': '/province/:idName',
+      'getCityByCoordinates': '/coordinates/:latitude/:longitude'
+      },
+
+   * }
+   */
   routes.get('/',
     (req, res, next) => index(req, res, next),
     (result, req, res, next) => setLinks(result, req, res, next),
