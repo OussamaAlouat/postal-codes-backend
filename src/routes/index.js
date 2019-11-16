@@ -13,7 +13,9 @@ import { setCitiesAtCitiesObject, setCityAtCityObject } from '../utils/setersAtO
 export default (config) => {
   const routes = Router();
   /**
+   * @apiGroup Root
    * @api {get} /
+   * @apiName Root
    * @apiSuccessExample Success-Resopnse:
    * HTTP/1.1 200 OK
    * {
@@ -34,6 +36,37 @@ export default (config) => {
     (result, req, res, next) => setLinks(result, req, res, next),
     (result, req, res) => sendOkResponse(result, req, res));
 
+      /**
+   * @apiGroup Root
+   * @apiName GET_BY_POSTAL_CODE
+   * @api {get} /postalcode/:postalCode
+   * @apiSuccessExample Success-Resopnse:
+   * HTTP/1.1 200 OK
+   * {
+    "_links": {
+        "getByPostalCode": "/postalcode/:postalCode",
+        "getByName": "/cityname/:idName",
+        "getAllCitiesOfAProvince": "/province/:idName",
+        "getCityByCoordinates": "/coordinates/:latitude/:longitude"
+    },
+    "city": [
+        {
+            "postal_code": 46530,
+            "town": "Puçol",
+            "province": "Valencia/València",
+            "latitude": -0.30317868,
+            "longitude": 39.61631894
+        },
+        {
+            "postal_code": 46530,
+            "town": "Sagunto/Sagunt",
+            "province": "Valencia/València",
+            "latitude": -0.2759603,
+            "longitude": 39.68008485
+        }
+    ]
+  }
+   */
   routes.get('/postalcode/:postalCode',
     (req, res, next) => postalCodeController(req, res, next, config),
     (result, req, res, next) => filterNotFound(result, req, res, next),

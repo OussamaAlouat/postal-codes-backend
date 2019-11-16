@@ -1,21 +1,1 @@
-define({ "api": [
-  {
-    "type": "get",
-    "url": "/",
-    "title": "",
-    "success": {
-      "examples": [
-        {
-          "title": "Success-Resopnse:",
-          "content": "HTTP/1.1 200 OK\n{\n     data : {\n       message: 'Server up!!'\n     },\n    _links: {\n      'getByPostalCode': '/postalcode/:postalCode',\n      'getByName': '/cityname/:idName',\n      'getAllCitiesOfAProvince': '/province/:idName',\n      'getCityByCoordinates': '/coordinates/:latitude/:longitude'\n      },\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "version": "0.0.0",
-    "filename": "src/routes/index.js",
-    "group": "_home_oussama_Projects_personal_postal_codes_backend_src_routes_index_js",
-    "groupTitle": "_home_oussama_Projects_personal_postal_codes_backend_src_routes_index_js",
-    "name": "Get"
-  }
-] });
+define({ "api": [  {    "group": "Root",    "name": "GET_BY_POSTAL_CODE",    "type": "get",    "url": "/postalcode/:postalCode",    "title": "",    "success": {      "examples": [        {          "title": "Success-Resopnse:",          "content": "HTTP/1.1 200 OK\n{\n    \"_links\": {\n        \"getByPostalCode\": \"/postalcode/:postalCode\",\n        \"getByName\": \"/cityname/:idName\",\n        \"getAllCitiesOfAProvince\": \"/province/:idName\",\n        \"getCityByCoordinates\": \"/coordinates/:latitude/:longitude\"\n    },\n    \"city\": [\n        {\n            \"postal_code\": 46530,\n            \"town\": \"Puçol\",\n            \"province\": \"Valencia/València\",\n            \"latitude\": -0.30317868,\n            \"longitude\": 39.61631894\n        },\n        {\n            \"postal_code\": 46530,\n            \"town\": \"Sagunto/Sagunt\",\n            \"province\": \"Valencia/València\",\n            \"latitude\": -0.2759603,\n            \"longitude\": 39.68008485\n        }\n    ]\n  }",          "type": "json"        }      ]    },    "version": "0.0.0",    "filename": "src/routes/index.js",    "groupTitle": "Root"  },  {    "group": "Root",    "type": "get",    "url": "/",    "title": "",    "name": "Root",    "success": {      "examples": [        {          "title": "Success-Resopnse:",          "content": "HTTP/1.1 200 OK\n{\n     data : {\n       message: 'Server up!!'\n     },\n    _links: {\n      'getByPostalCode': '/postalcode/:postalCode',\n      'getByName': '/cityname/:idName',\n      'getAllCitiesOfAProvince': '/province/:idName',\n      'getCityByCoordinates': '/coordinates/:latitude/:longitude'\n      },\n}",          "type": "json"        }      ]    },    "version": "0.0.0",    "filename": "src/routes/index.js",    "groupTitle": "Root"  },  {    "group": "Root",    "type": "get",    "url": "/postalcode/:postalCode",    "title": "",    "success": {      "examples": [        {          "title": "Success-Resopnse:",          "content": "HTTP/1.1 200 OK\n{\n     data : {\n       message: 'Server up!!'\n     },\n    _links: {\n      'getByPostalCode': '/postalcode/:postalCode',\n      'getByName': '/cityname/:idName',\n      'getAllCitiesOfAProvince': '/province/:idName',\n      'getCityByCoordinates': '/coordinates/:latitude/:longitude'\n      },\n}\n**",          "type": "json"        }      ]    },    "name": "postalCode",    "version": "0.0.0",    "filename": "src/apiDoc.js",    "groupTitle": "Root"  }] });
