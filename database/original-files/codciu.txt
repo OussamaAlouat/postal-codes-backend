@@ -1,0 +1,153 @@
+010Vitoria-Gasteiz
+01xAraba-Álava
+020Albacete
+02xAlbacete
+030Alacant-Alicante
+031Alcoi-Alcoy
+032Elx-Elche
+035Benidorm
+036Torrevieja
+03xAlicante
+040Almería
+04xAlmería
+050Ávila
+05xÁvila
+060Badajoz
+06xBadajoz
+070Palma de Mallorca
+072Maó
+07xIlles Balears
+080Barcelona
+081Badalona
+082Hospitalet de Llobregat,l'
+083Mataró
+084Sabadell
+085Santa Coloma de Gramanet
+086Terrassa
+087Manresa 
+088Sant Cugat del Vallés
+089Granollers
+08xBarcelona
+090Burgos
+09xBurgos
+100Cáceres
+10xCáceres
+110Cádiz
+111Algeciras
+113Jerez de la Frontera
+11xCádiz
+120Castelló-Castellón de la Plana
+12xCastellón
+130Ciudad Real
+13xCiudad Real
+140Córdoba
+14xCórdoba
+150A Coruña
+151Ferrol
+152Santiago de Compostela
+15xCoruña
+160Cuenca
+16xCuenca
+170Girona
+17xGirona
+180Granada
+18xGranada
+190Guadalajara
+19xGuadalajara
+200Donostia - San Sebastian
+201Irún
+20xGipuzkoa
+210Huelva
+21xHuelva
+220Huesca
+22xHuesca
+230Jaén
+23xJaén
+240León
+241Ponferrada
+24xLeón
+250Lleida
+25xLleida
+260Logroño
+26xLa Rioja
+270Lugo
+27xLugo
+280Madrid
+281Alcalá de Henares
+282Alcorcón
+283Getafe
+284Leganés
+285Móstoles
+286Pozuelo de Alarcón
+287Fuenlabrada
+288Alcobendas y La Moraleja
+289Las Rozas de Madrid       
+28aCoslada                   
+28bSan Sebastián de los Reyes
+28cMajadahonda               
+28dRivas-Vaciamadrid         
+28eParla                     
+28fValdemoro                 
+28xMadrid
+290Málaga
+291Marbella
+292Mijas
+29xMálaga
+300Murcia
+301Cartagena
+30xMurcia
+310Pamplona-Iruña
+31xNavarra
+320Ourense
+32xOurense
+330Oviedo
+331Gijón
+332Avilés
+33xAsturias
+340Palencia
+34xPalencia
+350Palmas de Gran Canaria,Las
+351Telde
+35xLas Palmas
+360Pontevedra
+361Vigo
+36xPontevedra
+370Salamanca
+37xSalamanca
+380Santa Cruz de Tenerife
+381San Cristobal de la Laguna
+38xSanta Cruz de Tenerife
+390Santander
+39xCantabria
+400Segovia
+40xSegovia
+410Sevilla
+411Dos Hermanas
+41xSevilla
+420Soria
+42xSoria
+430Tarragona
+431Reus
+43xTarragona
+440Teruel
+44xTeruel
+450Toledo
+45xToledo
+460Valencia
+461Gandía
+46xValencia
+470Valladolid
+47xValladolid
+480Bilbao
+481Barakaldo
+484Getxo (inc. Las Arenas y Algorta)
+48xBizkaia
+490Zamora
+49xZamora
+500Zaragoza
+50xZaragoza
+510Ceuta
+51xCeuta
+520Melilla
+52xMelilla
+ADxAndorra
